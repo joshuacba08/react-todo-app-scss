@@ -1,11 +1,14 @@
 import './App.scss'
+import Header from './components/Header/Header'
+import TaskContainer from './components/TaskContainer/TaskContainer'
 
 function App() {
   
 
   return (
     <>
-      <h1>React App</h1>
+      <Header title="TODO"/>
+      <TaskContainer />
     </>
   )
 }
