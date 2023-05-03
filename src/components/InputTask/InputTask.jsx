@@ -1,11 +1,19 @@
-import './InputTask.scss'
+import "./InputTask.scss";
 
-function InputTask(props){
-    return (
-        <div className='input-task'>
-            <input type="text" placeholder="Create a new todo..."/>
-        </div>
-    )
+function InputTask({ task, setTask, addTask }) {
+  return (
+    <form className="input-task" onSubmit={addTask}>
+      <input
+        onInput={(event) => {
+          console.log(event.target.value);
+          setTask(event.target.value);
+        }}
+        type="text"
+        placeholder="Create a new todo..."
+        value={task}
+      />
+    </form>
+  );
 }
 
 export default InputTask;
