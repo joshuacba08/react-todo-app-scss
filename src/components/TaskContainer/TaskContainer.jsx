@@ -3,10 +3,11 @@ import InputTask from '../InputTask/InputTask';
 import TaskList from '../TaskList/TaskList';
 import './TaskContainer.scss';
 
-function TaskContainer(props){
+function TaskContainer(){
 
     // declaro mi estado que contendrá la descripción de la tarea
     const [task, setTask] = useState('');
+    
     const [arrayTask, setArrayTask] = useState([
         {
             id: 1,
@@ -28,8 +29,8 @@ function TaskContainer(props){
         }
         // seteo el estado de arrayTask con el nuevo array
         // uso el operador spread para para esparcir las tareas que ya tengo en el array
-        setArrayTask([...arrayTask,newTask]);
-
+        setArrayTask([...arrayTask, newTask])
+        console.log(arrayTask); // imprimo el array de tareas pero no tiene el estado actualizado porque aun no se ha vuelto a renderizar el componente, por eso se ve el array anterior. (usar react dev tools)
         // limpio el input de la tarea para que quede vacio
         setTask('');
     }
@@ -37,7 +38,7 @@ function TaskContainer(props){
     return (
         <main className='task-container'>
             <InputTask task={task}  setTask={setTask} addTask={addTask} />
-            <TaskList />
+            <TaskList arrayTask={arrayTask}/>
         </main>
     )
 }
