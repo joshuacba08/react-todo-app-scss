@@ -1,0 +1,25 @@
+.tasks-list-container{
+    border-radius: 6px;
+    background-color: var(--very-dark-grayish-blue2);
+}
+
+.task-list__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: var(--dark-grayish-blue);
+    border-bottom: 1px solid var(--very-dark-grayish-blue);
+}
+
+.check-task{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--dark-grayish-blue);
+    cursor: pointer;
+}
+
+.delete-button{
+    cursor: pointer;
+}
