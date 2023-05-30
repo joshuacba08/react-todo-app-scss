@@ -15,11 +15,21 @@ function TaskContainer() {
       date: "2023-05-01",
     },
   ]);
+  // 4 == "4" // true // no es estrictamente igual // compara solo el valor
+  // 4 === "4" // false // es estrictamente igual // compara el valor y el tipo de dato
+  
 
   const deleteTask = (id) => {
     // recorro el array de tareas y filtro las tareas que NO tengan el id que recibo por parámetro
     const newArrayTask = arrayTask.filter((task) => task.id !== id); //! = = (estrictamente desigual)
     // seteo el estado de arrayTask con el nuevo array que no tiene la tarea que se eliminó
+    setArrayTask(newArrayTask);
+  };
+
+  const clearTaskCompleted = () => {
+    // recorro el array de tareas y filtro las tareas que NO estén completadas
+    const newArrayTask = arrayTask.filter((task) => task.completed === false);
+    // seteo el estado de arrayTask con el nuevo array que no tiene las tareas completadas
     setArrayTask(newArrayTask);
   };
 
@@ -64,6 +74,7 @@ function TaskContainer() {
         arrayTask={arrayTask}
         changeStatusTask={changeStatusTask}
         deleteTask={deleteTask}
+        clearTaskCompleted={clearTaskCompleted}
       />
     </main>
   );

@@ -1,0 +1,14 @@
+.input-task{
+    padding: 12px 16px;
+    background-color: var( --very-dark-grayish-blue2);
+    margin-bottom: 20px;
+    border-radius: 5px;
+
+    .input-task__input{
+        width:100%;
+        background: none;
+        border: none;
+        outline: none;
+        color: var(--dark-grayish-blue);
+    }
+}
